@@ -4,15 +4,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-
-var hp := 5
-
-func take_damage():
-	hp=hp-1
-	
-	if hp==0:
-		queue_free()
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

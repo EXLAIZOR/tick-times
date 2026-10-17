@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b2cperwr32fre" path="res://character_body_2d.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://d0mmnthl1rmfn" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="3_hqtel"]
+[ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1p4y"]
 size = Vector2(13, 24)
@@ -12,10 +14,22 @@ script = ExtResource("1_onrkg")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=541086614]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167035600]
-position = Vector2(-54.5, 52)
 shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=252300607]
-position = Vector2(-54.5, 53)
 scale = Vector2(0.1171875, 0.203125)
 texture = ExtResource("2_i3pqv")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1233160677 node_paths=PackedStringArray("ROOT")]
+script = ExtResource("3_hqtel")
+ROOT = NodePath("..")
+metadata/_custom_type_script = "uid://cvbo4qktol0gj"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1066238113 node_paths=PackedStringArray("health_component")]
+collision_mask = 4
+script = ExtResource("4_sweqy")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://bsl6bumvyfk2j"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1265708097]
+shape = SubResource("RectangleShape2D_y1p4y")

@@ -8,4 +8,5 @@ func _ready() -> void:
 
 func _on_area_entered(area : Area2D):
 	if area is AttackComponent:
+		print("TOOK DAMAGE : ", area.attack.damage)
 		health_component.apply_attack(area.attack)
