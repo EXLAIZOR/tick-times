@@ -1,11 +1,25 @@
 [gd_scene format=3 uid="uid://2xm1dxonhn47"]
 
 [ext_resource type="Script" uid="uid://dtc2wrhibre51" path="res://enemy.gd" id="1_qi2p4"]
+[ext_resource type="Script" uid="uid://br1ka662muyfh" path="res://attack.gd" id="2_epg4t"]
 [ext_resource type="Texture2D" uid="uid://d0mmnthl1rmfn" path="res://icon.svg" id="2_iifgy"]
 [ext_resource type="Shape2D" uid="uid://cjom1gyk8xxo5" path="res://collisionshapeenemy.tres" id="3_epg4t"]
+[ext_resource type="Script" uid="uid://d3lekxp3p1unq" path="res://attack_component.gd" id="5_epg4t"]
+[ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="6_3yqyl"]
+[ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="7_wujgv"]
+
+[sub_resource type="Resource" id="Resource_qi2p4"]
+script = ExtResource("2_epg4t")
+metadata/_custom_type_script = "uid://br1ka662muyfh"
+
+[sub_resource type="Resource" id="Resource_wujgv"]
+script = ExtResource("2_epg4t")
+damage = 5
+metadata/_custom_type_script = "uid://br1ka662muyfh"
 
 [node name="Enemy" type="CharacterBody2D" unique_id=28214811]
 script = ExtResource("1_qi2p4")
+attack = SubResource("Resource_qi2p4")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=472078124]
 position = Vector2(-0.4999981, 0.9999981)
@@ -18,4 +32,25 @@ shape = ExtResource("3_epg4t")
 [node name="Area2D" type="Area2D" parent="CollisionShape2D" unique_id=191575457]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D" unique_id=597117136]
+shape = ExtResource("3_epg4t")
+
+[node name="AttackComponents" type="Area2D" parent="." unique_id=1162790735]
+script = ExtResource("5_epg4t")
+attack = SubResource("Resource_wujgv")
+metadata/_custom_type_script = "uid://d3lekxp3p1unq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponents" unique_id=1736191266]
+shape = ExtResource("3_epg4t")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1132379041 node_paths=PackedStringArray("ROOT")]
+script = ExtResource("6_3yqyl")
+ROOT = NodePath("..")
+metadata/_custom_type_script = "uid://cvbo4qktol0gj"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1484844267 node_paths=PackedStringArray("health_component")]
+script = ExtResource("7_wujgv")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://bsl6bumvyfk2j"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=888363149]
 shape = ExtResource("3_epg4t")
