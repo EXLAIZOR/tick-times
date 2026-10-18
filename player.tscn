@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5kvsqcextp05" path="res://assets/images/bulb.png" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://baq5oexw4ta6w" path="res://attacked_timer.gd" id="5_sweqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
 atlas = ExtResource("2_hqtel")
@@ -136,4 +137,11 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="hitTimer" type="Timer" parent="." unique_id=737981547]
-wait_time = 0.5
+wait_time = 0.3
+one_shot = true
+
+[node name="attackedTimer" type="Timer" parent="." unique_id=747156729]
+one_shot = true
+script = ExtResource("5_sweqy")
+
+[node name="Node" type="Node" parent="." unique_id=1507507260]

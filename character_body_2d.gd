@@ -6,10 +6,9 @@ const JUMP_VELOCITY = -400.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var hitTimer = $hitTimer
+@onready var attackedTimer = $attackedTimer
 var attacking = false
-var attacked_timer = 3
-
-
+var attacked = false
 
 func _process(_delta):
 	handle_sprites()
@@ -38,7 +37,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func handle_sprites():
-	if attacking == true:
+	if attackedTimer.time_left > 0:
+		_animated_sprite.play("injured")
+	elif hitTimer.time_left > 0:
 		_animated_sprite.play("attack")
 	elif not is_on_floor():
 			if velocity.y < 0:
@@ -54,6 +55,3 @@ func handle_sprites():
 	elif Input.is_action_pressed("MoveRight"):
 		_animated_sprite.flip_h = false
 	
-
-func _on_hit_timer_timeout() -> void:
-	attacking = false
