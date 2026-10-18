@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Attack"):
 		attacking = true
+		hitTimer.start()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -37,9 +38,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func handle_sprites():
-	if hitTimer.get_time_left() > 0:
-		_animated_sprite.play("injured")
-	elif attacking == true:
+	if attacking == true:
 		_animated_sprite.play("attack")
 	elif not is_on_floor():
 			if velocity.y < 0:
@@ -55,3 +54,6 @@ func handle_sprites():
 	elif Input.is_action_pressed("MoveRight"):
 		_animated_sprite.flip_h = false
 	
+
+func _on_hit_timer_timeout() -> void:
+	attacking = false

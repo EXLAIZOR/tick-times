@@ -115,7 +115,6 @@ animation = &"walk"
 zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167035600]
-position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1233160677 node_paths=PackedStringArray("ROOT")]
@@ -134,3 +133,6 @@ shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="hitTimer" type="Timer" parent="." unique_id=737981547]
 wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="hitTimer" to="." method="_on_hit_timer_timeout"]
