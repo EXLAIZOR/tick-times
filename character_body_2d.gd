@@ -7,9 +7,10 @@ const JUMP_VELOCITY = -400.0
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var hitTimer = $hitTimer
 @onready var attackedTimer = $attackedTimer
+@onready var health_component: HealthComponent = $HealthComponent
 var attacking = false
 var attacked = false
-
+var hearts_list : Array [TextureRect]
 var bullet_path=preload("res://bullet.tscn")
 
 func _process(_delta):
@@ -60,4 +61,19 @@ func handle_sprites():
 		_animated_sprite.flip_h = true
 	elif Input.is_action_pressed("MoveRight"):
 		_animated_sprite.flip_h = false
-	
+
+func _ready() -> void:
+	var hearts_parent = $HP/HBoxContainer
+	for child in hearts_parent.get_children():
+		hearts_list.append(child)
+	print(hearts_list)
+	if health_component:
+		health_component.health_changed.connect(_on_health_changed)
+
+func _on_health_changed(new_health: int) -> void:
+	update_heart_display(new_health)
+
+
+func update_heart_display(new_health: int) -> void:
+	for i in range(hearts_list.size()):
+		hearts_list[i].visible = i < new_health

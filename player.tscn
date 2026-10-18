@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="4_sweqy"]
 [ext_resource type="Script" uid="uid://baq5oexw4ta6w" path="res://attacked_timer.gd" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://d0mmnthl1rmfn" path="res://icon.svg" id="6_2hs0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
 atlas = ExtResource("2_hqtel")
@@ -151,3 +152,52 @@ script = ExtResource("5_sweqy")
 position = Vector2(43, 0)
 
 [node name="HP" type="CanvasLayer" parent="." unique_id=1934381644]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HP" unique_id=545434340]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HP/HBoxContainer" unique_id=1697696387]
+custom_minimum_size = Vector2(65.03, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HP/HBoxContainer/TextureRect" unique_id=235018583]
+position = Vector2(33, 33)
+scale = Vector2(0.49999997, 0.49999994)
+texture = ExtResource("6_2hs0m")
+
+[node name="TextureRect2" type="TextureRect" parent="HP/HBoxContainer" unique_id=1376016853]
+custom_minimum_size = Vector2(65.03, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HP/HBoxContainer/TextureRect2" unique_id=476062360]
+position = Vector2(33, 33)
+scale = Vector2(0.49999997, 0.49999994)
+texture = ExtResource("6_2hs0m")
+
+[node name="TextureRect3" type="TextureRect" parent="HP/HBoxContainer" unique_id=1509369567]
+custom_minimum_size = Vector2(65.03, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HP/HBoxContainer/TextureRect3" unique_id=1150846132]
+position = Vector2(33, 33)
+scale = Vector2(0.49999997, 0.49999994)
+texture = ExtResource("6_2hs0m")
+
+[node name="TextureRect4" type="TextureRect" parent="HP/HBoxContainer" unique_id=1430410528]
+custom_minimum_size = Vector2(65.03, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HP/HBoxContainer/TextureRect4" unique_id=1338871544]
+position = Vector2(33, 33)
+scale = Vector2(0.49999997, 0.49999994)
+texture = ExtResource("6_2hs0m")
+
+[node name="TextureRect5" type="TextureRect" parent="HP/HBoxContainer" unique_id=1285357631]
+custom_minimum_size = Vector2(65.03, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HP/HBoxContainer/TextureRect5" unique_id=1836876984]
+position = Vector2(33, 33)
+scale = Vector2(0.49999997, 0.49999994)
+texture = ExtResource("6_2hs0m")

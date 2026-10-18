@@ -1,6 +1,8 @@
 class_name HealthComponent
 extends Node
 
+signal health_changed(new_health: int)
+
 @export var MAX_HEALTH : int = 5
 @export var initial_health : int = 5
 @export var ROOT : Node
@@ -12,6 +14,6 @@ func _ready() -> void:
 
 func apply_attack(attack : Attack):
 	current_health -= attack.damage
-	
+	health_changed.emit(current_health)
 	if current_health <= 0:
 		get_tree().reload_current_scene()
