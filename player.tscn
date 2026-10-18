@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bif7kogln61f3"]
 
 [ext_resource type="Script" uid="uid://b2cperwr32fre" path="res://character_body_2d.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://b5kvsqcextp05" path="res://assets/images/bulb.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://b5kvsqcextp05" path="res://Assets/Images/bulb.png" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="4_sweqy"]
 [ext_resource type="Script" uid="uid://baq5oexw4ta6w" path="res://attacked_timer.gd" id="5_sweqy"]
@@ -149,3 +149,5 @@ script = ExtResource("5_sweqy")
 
 [node name="BulletPosition" type="Node2D" parent="." unique_id=1421339271]
 position = Vector2(43, 0)
+
+[node name="HP" type="CanvasLayer" parent="." unique_id=1934381644]
