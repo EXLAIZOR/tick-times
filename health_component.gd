@@ -14,4 +14,4 @@ func apply_attack(attack : Attack):
 	current_health -= attack.damage
 	
 	if current_health <= 0:
-		ROOT.queue_free()
+		get_tree().reload_current_scene()
