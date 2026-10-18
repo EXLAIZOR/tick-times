@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2xm1dxonhn47" path="res://enemy.tscn" id="1_c5erv"]
 [ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://assets/images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_sbmc0"]
 [ext_resource type="PackedScene" uid="uid://bif7kogln61f3" path="res://player.tscn" id="2_vly50"]
+[ext_resource type="Script" uid="uid://b2cperwr32fre" path="res://character_body_2d.gd" id="4_lyd6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j1ym"]
 texture = ExtResource("1_sbmc0")
@@ -152,6 +153,7 @@ tile_set = SubResource("TileSet_e1x5f")
 
 [node name="Player" parent="." unique_id=1425424670 instance=ExtResource("2_vly50")]
 position = Vector2(688, 374)
+script = ExtResource("4_lyd6k")
 
 [node name="Enemy2" parent="." unique_id=1476373 instance=ExtResource("1_c5erv")]
 position = Vector2(210, 477)
