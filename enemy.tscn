@@ -53,6 +53,8 @@ ROOT = NodePath("..")
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1484844267 node_paths=PackedStringArray("health_component")]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("7_wujgv")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bsl6bumvyfk2j"

@@ -17,8 +17,8 @@ size = Vector2(32.5, 29.5)
 script = ExtResource("1_2b2rl")
 
 [node name="AttackComponent" type="Area2D" parent="." unique_id=1922267179]
-collision_layer = 4
-collision_mask = 15
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_t4vbm")
 attack = SubResource("Resource_o3xhx")
 metadata/_custom_type_script = "uid://d3lekxp3p1unq"
