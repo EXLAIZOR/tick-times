@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddsqh7ck6s3hi"
-path="res://.godot/imported/pngtree-retro-light-bulb-png-image_13326821.png-8120eb0364e1b382a9d9a4f3d93749ca.ctex"
+path="res://.godot/imported/pngtree-retro-light-bulb-png-image_13326821.png-74ca94afd438c3d24460a54394616359.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Player/pngtree-retro-light-bulb-png-image_13326821.png"
-dest_files=["res://.godot/imported/pngtree-retro-light-bulb-png-image_13326821.png-8120eb0364e1b382a9d9a4f3d93749ca.ctex"]
+source_file="res://Assets/Images/Player/pngtree-retro-light-bulb-png-image_13326821.png"
+dest_files=["res://.godot/imported/pngtree-retro-light-bulb-png-image_13326821.png-74ca94afd438c3d24460a54394616359.ctex"]
 
 [params]
 
