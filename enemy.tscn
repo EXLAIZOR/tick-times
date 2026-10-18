@@ -62,7 +62,7 @@ shape = ExtResource("3_epg4t")
 
 [node name="AttackComponents" type="Area2D" parent="CollisionShape2D/Area2D" unique_id=1162790735]
 position = Vector2(6, 20)
-collision_layer = 4
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("5_epg4t")
 attack = SubResource("Resource_wujgv")
@@ -79,6 +79,9 @@ initial_health = 1
 ROOT = NodePath("..")
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=817811609]
+sprite_frames = SubResource("SpriteFrames_pc336")
+
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1484844267 node_paths=PackedStringArray("health_component")]
 position = Vector2(11, 26)
 collision_layer = 4
@@ -90,8 +93,5 @@ metadata/_custom_type_script = "uid://bsl6bumvyfk2j"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=888363149]
 position = Vector2(-11, -26)
 shape = ExtResource("3_epg4t")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=817811609]
-sprite_frames = SubResource("SpriteFrames_pc336")
 
 [connection signal="area_entered" from="CollisionShape2D/Area2D/AttackComponents" to="." method="_on_attack_components_area_entered"]
