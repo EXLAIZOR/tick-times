@@ -30,20 +30,25 @@ texture = ExtResource("2_iifgy")
 shape = ExtResource("3_epg4t")
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D" unique_id=191575457]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D" unique_id=597117136]
 shape = ExtResource("3_epg4t")
 
-[node name="AttackComponents" type="Area2D" parent="." unique_id=1162790735]
+[node name="AttackComponents" type="Area2D" parent="CollisionShape2D/Area2D" unique_id=1162790735]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("5_epg4t")
 attack = SubResource("Resource_wujgv")
 metadata/_custom_type_script = "uid://d3lekxp3p1unq"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponents" unique_id=1736191266]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D/AttackComponents" unique_id=1736191266]
+position = Vector2(0, 1.5)
 shape = ExtResource("3_epg4t")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1132379041 node_paths=PackedStringArray("ROOT")]
 script = ExtResource("6_3yqyl")
+MAX_HEALTH = 10
 ROOT = NodePath("..")
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 
