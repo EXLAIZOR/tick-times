@@ -5,7 +5,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @export var attack : Attack
+@onready var _animated_sprite = $AnimatedSprite2D
 
+func _process(_delta):
+	_animated_sprite.play("default")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
