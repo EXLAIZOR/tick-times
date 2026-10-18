@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://i7d68es4vy7x"]
+
+[ext_resource type="Texture2D" uid="uid://ces16oaypyg3" path="res://assets/images/hp.png" id="1_vml6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4dmj"]
+atlas = ExtResource("1_vml6a")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ctj"]
+atlas = ExtResource("1_vml6a")
+region = Rect2(0, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4dmj")
+}],
+"loop": 1,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ctj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
