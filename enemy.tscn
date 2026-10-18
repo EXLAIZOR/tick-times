@@ -17,6 +17,9 @@ script = ExtResource("2_epg4t")
 damage = 1
 metadata/_custom_type_script = "uid://br1ka662muyfh"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wujgv"]
+size = Vector2(25.06, 24.27)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=28214811]
 script = ExtResource("1_qi2p4")
 attack = SubResource("Resource_qi2p4")
@@ -27,15 +30,19 @@ scale = Vector2(0.1640625, 0.171875)
 texture = ExtResource("2_iifgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1015336967]
+position = Vector2(0, 1)
 shape = ExtResource("3_epg4t")
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D" unique_id=191575457]
+position = Vector2(-11.4375, -2)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D" unique_id=597117136]
+position = Vector2(11.4375, 2)
 shape = ExtResource("3_epg4t")
 
 [node name="AttackComponents" type="Area2D" parent="CollisionShape2D/Area2D" unique_id=1162790735]
+position = Vector2(6, 20)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("5_epg4t")
@@ -43,8 +50,8 @@ attack = SubResource("Resource_wujgv")
 metadata/_custom_type_script = "uid://d3lekxp3p1unq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D/AttackComponents" unique_id=1736191266]
-position = Vector2(0, 1.5)
-shape = ExtResource("3_epg4t")
+position = Vector2(5.4375, -18)
+shape = SubResource("RectangleShape2D_wujgv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1132379041 node_paths=PackedStringArray("ROOT")]
 script = ExtResource("6_3yqyl")
@@ -53,6 +60,7 @@ ROOT = NodePath("..")
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1484844267 node_paths=PackedStringArray("health_component")]
+position = Vector2(11, 26)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("7_wujgv")
@@ -60,5 +68,5 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bsl6bumvyfk2j"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=888363149]
-position = Vector2(-0.5, 0.75)
+position = Vector2(-11, -25)
 shape = ExtResource("3_epg4t")

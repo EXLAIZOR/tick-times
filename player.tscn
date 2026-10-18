@@ -132,7 +132,7 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bsl6bumvyfk2j"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1265708097]
-position = Vector2(1, 1)
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="hitTimer" type="Timer" parent="." unique_id=737981547]
