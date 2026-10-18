@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://eg06sud37q35"]
 
+[ext_resource type="Script" uid="uid://bccdix8xuftt5" path="res://Scenes/level_2.gd" id="1_1q6tm"]
 [ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://assets/images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_12fag"]
 [ext_resource type="PackedScene" uid="uid://2xm1dxonhn47" path="res://enemy.tscn" id="2_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://bif7kogln61f3" path="res://player.tscn" id="3_v36qu"]
@@ -134,7 +135,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cggpd")
 sources/1 = SubResource("TileSetScenesCollectionSource_055b2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1x5f"]
+size = Vector2(50, 43)
+
 [node name="Node2D" type="Node2D" unique_id=561422748]
+script = ExtResource("1_1q6tm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2092074679]
 position = Vector2(-1, 0)
@@ -143,3 +148,9 @@ tile_set = SubResource("TileSet_e1x5f")
 
 [node name="Player" parent="." unique_id=1425424670 instance=ExtResource("3_v36qu")]
 position = Vector2(44, 54)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=206789322]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1089324506]
+position = Vector2(1275, 63.5)
+shape = SubResource("RectangleShape2D_e1x5f")
