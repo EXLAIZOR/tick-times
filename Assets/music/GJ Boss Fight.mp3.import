@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c8m2grm85n4py"
-path="res://.godot/imported/GJ Boss Fight.mp3-32228cfa2298290d8940f353bf705f44.mp3str"
+path="res://.godot/imported/GJ Boss Fight.mp3-7a0ef93d69707291c7c1a648ccc41e2d.mp3str"
 
 [deps]
 
-source_file="res://assets/music/GJ Boss Fight.mp3"
-dest_files=["res://.godot/imported/GJ Boss Fight.mp3-32228cfa2298290d8940f353bf705f44.mp3str"]
+source_file="res://Assets/music/GJ Boss Fight.mp3"
+dest_files=["res://.godot/imported/GJ Boss Fight.mp3-7a0ef93d69707291c7c1a648ccc41e2d.mp3str"]
 
 [params]
 
