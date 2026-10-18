@@ -67,8 +67,14 @@ func _ready() -> void:
 	for child in hearts_parent.get_children():
 		hearts_list.append(child)
 	print(hearts_list)
+	for heart in hearts_list:
+		var sprite = heart.get_node_or_null("AnimatedSprite2D")
+		if sprite:
+			sprite.play("default")
+	
 	if health_component:
 		health_component.health_changed.connect(_on_health_changed)
+		update_heart_display(health_component.current_health)
 
 func _on_health_changed(new_health: int) -> void:
 	update_heart_display(new_health)
@@ -76,4 +82,16 @@ func _on_health_changed(new_health: int) -> void:
 
 func update_heart_display(new_health: int) -> void:
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = i < new_health
+		var heart = hearts_list[i]
+		var sprite = heart.get_node_or_null("AnimatedSprite2D")
+		
+		if sprite != null:
+			if i < new_health:
+				heart.visible = true
+				sprite.play("default")
+			else:
+				if sprite.animation != "damaged":
+					await get_tree().create_timer(0.1).timeout
+					sprite.play("damaged")
+					await get_tree().create_timer(0.2).timeout
+					heart.visible = false
