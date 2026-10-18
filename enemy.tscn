@@ -93,3 +93,5 @@ shape = ExtResource("3_epg4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=817811609]
 sprite_frames = SubResource("SpriteFrames_pc336")
+
+[connection signal="area_entered" from="CollisionShape2D/Area2D/AttackComponents" to="." method="_on_attack_components_area_entered"]
