@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://2xm1dxonhn47" path="res://enemy.tscn" id="1_c5erv"]
 [ext_resource type="Script" uid="uid://bwi50s4exja0v" path="res://Singleton/level_1.gd" id="1_lyd6k"]
-[ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://Assets/Images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_sbmc0"]
+[ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://assets/images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_sbmc0"]
 [ext_resource type="PackedScene" uid="uid://bif7kogln61f3" path="res://player.tscn" id="2_vly50"]
-[ext_resource type="AudioStream" uid="uid://cax5eluwbbgru" path="res://Assets/music/Soundtracks 2.mp3" id="5_y4dr7"]
+[ext_resource type="AudioStream" uid="uid://cax5eluwbbgru" path="res://assets/music/Soundtracks 2.mp3" id="5_y4dr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j1ym"]
 texture = ExtResource("1_sbmc0")
@@ -143,7 +143,7 @@ sources/0 = SubResource("TileSetAtlasSource_8j1ym")
 sources/1 = SubResource("TileSetScenesCollectionSource_c5erv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1x5f"]
-size = Vector2(60, 20)
+size = Vector2(45, 38)
 
 [node name="LevelRoot" type="Node2D" unique_id=1656716161]
 script = ExtResource("1_lyd6k")
@@ -174,7 +174,7 @@ position = Vector2(1000, 532)
 [node name="Area2D" type="Area2D" parent="." unique_id=155589181]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1743655264]
-position = Vector2(1258, 48)
+position = Vector2(1250.5, 53)
 shape = SubResource("RectangleShape2D_e1x5f")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=519016189]

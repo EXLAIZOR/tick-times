@@ -152,5 +152,5 @@ position = Vector2(44, 54)
 [node name="Area2D" type="Area2D" parent="." unique_id=206789322]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1089324506]
-position = Vector2(1275, 63.5)
+position = Vector2(1275, 55)
 shape = SubResource("RectangleShape2D_e1x5f")
