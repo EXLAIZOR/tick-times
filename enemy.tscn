@@ -43,6 +43,8 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=28214811]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_qi2p4")
 attack = SubResource("Resource_qi2p4")
 
@@ -73,6 +75,7 @@ shape = SubResource("RectangleShape2D_wujgv")
 [node name="HealthComponent" type="Node" parent="." unique_id=1132379041 node_paths=PackedStringArray("ROOT")]
 script = ExtResource("6_3yqyl")
 MAX_HEALTH = 10
+initial_health = 1
 ROOT = NodePath("..")
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 

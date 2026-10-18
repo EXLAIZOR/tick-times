@@ -10,12 +10,18 @@ const JUMP_VELOCITY = -400.0
 var attacking = false
 var attacked = false
 
+var bullet_path=preload("res://bullet.tscn")
+
 func _process(_delta):
 	handle_sprites()
-
+func fire():
+	var bullet = bullet_path.instantiate()
+	get_parent().add_child(bullet)
+	bullet.global_position = global_position + Vector2(40,0)
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Attack"):
+		fire()
 		attacking = true
 		hitTimer.start()
 	# Add the gravity.
