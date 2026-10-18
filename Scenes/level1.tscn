@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://2xm1dxonhn47" path="res://enemy.tscn" id="1_c5erv"]
 [ext_resource type="Script" uid="uid://bwi50s4exja0v" path="res://Singleton/level_1.gd" id="1_lyd6k"]
-[ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://assets/images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_sbmc0"]
+[ext_resource type="Texture2D" uid="uid://dr2fhqda2tcg8" path="res://Assets/Images/Tilemap/LittleJumper1bitAssets/Tileset/1bitfull_tileset.png" id="1_sbmc0"]
 [ext_resource type="PackedScene" uid="uid://bif7kogln61f3" path="res://player.tscn" id="2_vly50"]
-[ext_resource type="AudioStream" uid="uid://cax5eluwbbgru" path="res://assets/music/Soundtracks 2.mp3" id="5_y4dr7"]
+[ext_resource type="AudioStream" uid="uid://c5n0esg4edag5" path="res://Assets/music/Soundtracks 3.mp3" id="2_y4dr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j1ym"]
 texture = ExtResource("1_sbmc0")
@@ -149,7 +149,10 @@ size = Vector2(66.5, 40)
 script = ExtResource("1_lyd6k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=519016189]
-stream = ExtResource("5_y4dr7")
+position = Vector2(600, 0)
+scale = Vector2(100, 100)
+stream = ExtResource("2_y4dr7")
+volume_db = 5.0
 autoplay = true
 
 [node name="Enemy" parent="." unique_id=28214811 instance=ExtResource("1_c5erv")]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5n0esg4edag5"
+path="res://.godot/imported/Soundtracks 3.mp3-7eabb6368a8108882d87d85305f375dc.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Soundtracks 3.mp3"
+dest_files=["res://.godot/imported/Soundtracks 3.mp3-7eabb6368a8108882d87d85305f375dc.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
