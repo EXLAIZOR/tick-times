@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d07idoey2oshn"
-path="res://.godot/imported/Soundtracks 1.mp3-86f12c1a9468ba10cca731a116faed17.mp3str"
+path="res://.godot/imported/Soundtracks 1.mp3-56679f1a22455aae6c9a6dacc0dbfb01.mp3str"
 
 [deps]
 
-source_file="res://Assets/music/Soundtracks 1.mp3"
-dest_files=["res://.godot/imported/Soundtracks 1.mp3-86f12c1a9468ba10cca731a116faed17.mp3str"]
+source_file="res://assets/music/Soundtracks 1.mp3"
+dest_files=["res://.godot/imported/Soundtracks 1.mp3-56679f1a22455aae6c9a6dacc0dbfb01.mp3str"]
 
 [params]
 

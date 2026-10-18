@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://dq3kvpui6p77j"]
 
 [ext_resource type="Script" uid="uid://b03glrcdskqf8" path="res://bullet.gd" id="1_2b2rl"]
-[ext_resource type="Script" uid="uid://d3lekxp3p1unq" path="res://attack_component.gd" id="1_t4vbm"]
-[ext_resource type="Script" uid="uid://br1ka662muyfh" path="res://attack.gd" id="2_2b2rl"]
+[ext_resource type="Script" uid="uid://cec33ypccibdh" path="res://area_2d_bullet.gd" id="2_t4vbm"]
 [ext_resource type="Texture2D" uid="uid://cshyvvqpfgwxr" path="res://assets/images/bulb_attack.png" id="4_b7duk"]
 
-[sub_resource type="Resource" id="Resource_o3xhx"]
-script = ExtResource("2_2b2rl")
-damage = 1
-metadata/_custom_type_script = "uid://br1ka662muyfh"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1x5f"]
-size = Vector2(32, 28)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1p4y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2bd8"]
 atlas = ExtResource("4_b7duk")
@@ -87,18 +80,16 @@ animations = [{
 [node name="Bullet" type="Node2D" unique_id=963133311]
 script = ExtResource("1_2b2rl")
 
-[node name="AttackComponent" type="Area2D" parent="." unique_id=1922267179]
-collision_layer = 255
-collision_mask = 255
-script = ExtResource("1_t4vbm")
-attack = SubResource("Resource_o3xhx")
-metadata/_custom_type_script = "uid://d3lekxp3p1unq"
+[node name="Area2D" type="Area2D" parent="." unique_id=66189427]
+collision_mask = 20
+script = ExtResource("2_t4vbm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=33913304]
-position = Vector2(-8, 6)
-shape = SubResource("RectangleShape2D_e1x5f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1994530476]
+shape = SubResource("RectangleShape2D_y1p4y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=833511431]
-position = Vector2(-9, 8)
+position = Vector2(1, -1)
 scale = Vector2(0.6666667, 0.5833334)
 sprite_frames = SubResource("SpriteFrames_pc336")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

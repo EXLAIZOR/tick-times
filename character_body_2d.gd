@@ -12,13 +12,16 @@ var attacking = false
 var attacked = false
 var hearts_list : Array [TextureRect]
 var bullet_path=preload("res://bullet.tscn")
+var facing_direction = 1
 
 func _process(_delta):
 	handle_sprites()
 func fire():
 	var bullet = bullet_path.instantiate()
 	get_parent().add_child(bullet)
-	bullet.global_position = global_position + Vector2(40,0)
+	bullet.global_position = global_position + Vector2(0,0)
+	bullet.direction=facing_direction
+	
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Attack"):
@@ -29,12 +32,15 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	
+	if Input.is_action_pressed("MoveRight"):
+		facing_direction = 1
+	elif Input.is_action_pressed("MoveLeft"):
+		facing_direction = -1
+	
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("MoveLeft", "MoveRight")
 	if direction:
 		velocity.x = direction * SPEED
