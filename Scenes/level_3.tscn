@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c8m2grm85n4py" path="res://assets/music/GJ Boss Fight.mp3" id="5_vwg62"]
 [ext_resource type="Script" uid="uid://bthwm8fofa15m" path="res://Scenes/boss.gd" id="6_l4wr6"]
 [ext_resource type="SpriteFrames" uid="uid://i7d68es4vy7x" path="res://hp_spriteframes.tres" id="7_5rvg2"]
+[ext_resource type="Script" uid="uid://br1ka662muyfh" path="res://attack.gd" id="7_jtv8s"]
 [ext_resource type="Script" uid="uid://cvbo4qktol0gj" path="res://health_component.gd" id="8_jtv8s"]
 [ext_resource type="Script" uid="uid://bsl6bumvyfk2j" path="res://hitbox_component.gd" id="9_c81s1"]
 
@@ -144,6 +145,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v1qfn")
 sources/1 = SubResource("TileSetScenesCollectionSource_6whob")
 
+[sub_resource type="Resource" id="Resource_l4wr6"]
+script = ExtResource("7_jtv8s")
+metadata/_custom_type_script = "uid://br1ka662muyfh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1x5f"]
 size = Vector2(22.5, 27.5)
 
@@ -168,6 +173,7 @@ autoplay = true
 [node name="Boss" type="CharacterBody2D" parent="." unique_id=671162353]
 position = Vector2(615, 608)
 script = ExtResource("6_l4wr6")
+attack = SubResource("Resource_l4wr6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss" unique_id=1127549514]
 scale = Vector2(0.7083333, 0.625)
@@ -179,8 +185,8 @@ shape = SubResource("RectangleShape2D_e1x5f")
 
 [node name="HealthComponent" type="Node" parent="Boss" unique_id=1139483457]
 script = ExtResource("8_jtv8s")
-MAX_HEALTH = 10
-initial_health = 10
+MAX_HEALTH = 6
+initial_health = 6
 metadata/_custom_type_script = "uid://cvbo4qktol0gj"
 
 [node name="HitboxComponent" type="Area2D" parent="Boss" unique_id=355841892]
